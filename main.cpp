@@ -19,6 +19,22 @@ public:
 		, m_gold{ gold }
 	{}
 
+	const std::string_view getName() const { return m_name; }
+	const std::vector<std::string_view> getPotInventory() const { return m_potInventory; }
+	const double getGold() const { return m_gold; }
+	
+	void setName(const std::string& name) { this->m_name = name; }
+	void setPotInventory(int index)
+	{
+		if (index >= 0 && index < static_cast<int>(Potion::Type::max))
+		{
+			this->m_potInventory.push_back(getPotionName(static_cast<Potion::Type>(index)));
+		}
+		else
+		{
+			std::cout << "ERROR! INVALID INPUT FROM POTION ID" << '\n';
+		}
+	}
 
 
 };
