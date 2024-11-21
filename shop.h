@@ -6,7 +6,7 @@
 
 void shop()
 {
-	std::cout << "Here are your pots for today!" << '\n';
+	std::cout << "Here are our pots for today!" << '\n';
 	for (int i{ 0 }; i < Potion::Type::max; ++i)
 	{
 		std::cout << i << "- " << static_cast<Potion::Type>(i) << " costs " << Potion::potionCost[i] << '\n';
